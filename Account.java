@@ -126,14 +126,14 @@ public class Account  {
         ticketTrain TicketTrain=new ticketTrain();
         TicketTrain.input(money);
      ticketTrainList.add(TicketTrain);
+     money-=30000;
 
 
     }
     public void displayHistoryTicketTrain(){
-        System.out.println("Lịch sử đặt vé");
+        System.out.println("Lịch sử đặt vé : ");
         ticketTrainList.forEach((ticketTrain) ->ticketTrain.display() );
-        money -=30000;
-        System.out.println("Số tiền còn lại là: "+money);
+
     }
 
     @Override
