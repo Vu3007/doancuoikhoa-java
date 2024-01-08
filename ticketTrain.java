@@ -69,10 +69,11 @@ public class ticketTrain {
         for (; ; ) {
 
 
-            if (money <= 30000) {
+            if (money >= 30000) {
                 break;
             }
-            System.err.println("So tien chuyen vuot qua so tien trong TK");
+            System.err.println("TK không đủ tiền!");
+            break;
         }
 
     }

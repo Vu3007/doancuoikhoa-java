@@ -323,44 +323,4 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
         System.out.println("8.Thoat");
         System.out.println("Chon: ");
     }
-
-
-    void napTien(){
-        Account account = new Account();
-        if(account != null) {
-            account.addReceiver();
-
-            account.display();
-        } else {
-            System.err.println("TK khong ton tai");
-        }
-    }
-    void chuyenKhoan(){
-        Account account = new Account();
-        if(account != null) {
-            account.transfer();
-            account.display();
-        } else {
-            System.err.println("TK khong ton tai");
-        }
-    }
-    void lichsunaptien(){
-        Account account = new Account();
-        if(account != null) {
-            account.displayReceiverHistory();
-        } else {
-            System.err.println("TK khong ton tai");
-        }
-    }
-    void lichsuchuyentien(){
-        Account account = new Account();
-        if(account != null) {
-            account.displayTransferHistory();
-        } else {
-            System.err.println("TK khong ton tai");
-        }
-    }
-
-
-
     }
