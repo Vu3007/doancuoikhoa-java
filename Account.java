@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 public class Account  {
     String fullname, stk, phoneNumber, address;
     int money;
@@ -129,12 +128,8 @@ public class Account  {
             money-=30000;
     }
     public void displayHistoryTicketTrain(){
-    if (money>=30000){
         System.out.println("Lịch sử đặt vé : ");
         ticketTrainList.forEach((ticketTrain) ->ticketTrain.display() );
-    }else {
-        System.out.println("Không tồn tại!!");
-    }
 
     }
 
@@ -146,9 +141,8 @@ public class Account  {
     public void display() {
         System.out.println(toString());
 
-//        displayReceiverHistory();
-//
-//        displayTransferHistory();
+        displayReceiverHistory();
+        displayTransferHistory();
     }
 }
 

@@ -9,7 +9,9 @@ public class ticketTrain {
     private int soGhe;
     private int money;
     Date createdAt;
-    public ticketTrain(){}
+    public ticketTrain(){
+
+    }
 
     public ticketTrain(String name, int cccd, int soGhe) {
         this.name = name;
@@ -17,15 +19,6 @@ public class ticketTrain {
         this.soGhe = soGhe;
         this.money=money;
     }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public int getMoney() {
         return money;
     }
@@ -57,6 +50,13 @@ public class ticketTrain {
     public void setSoGhe(int soGhe) {
         this.soGhe = soGhe;
     }
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
     public  void input(int maxMoney){
         Scanner sc=new Scanner(System.in);
         System.out.println("Nhập Ho & Ten");
@@ -69,7 +69,8 @@ public class ticketTrain {
         for (; ; ) {
 
 
-            if (money >= 30000) {
+            if (maxMoney >= 30000) {
+                System.out.println("Đặt vé thành công!!");
                 break;
             }
             System.err.println("TK không đủ tiền!");

@@ -58,6 +58,7 @@ public class Transfer {
             money = Integer.parseInt(scan.nextLine());
 
             if (money <= maxMoney) {
+                System.out.println("Chuyển tiền thành công!!");
                 break;
             }
             System.err.println("So tien chuyen vuot qua so tien trong TK");

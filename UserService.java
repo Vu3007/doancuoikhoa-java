@@ -267,7 +267,6 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                 case 3:
                     if(account != null) {
                         account.transfer();
-                        account.display();
                     } else {
                         System.err.println("TK khong ton tai");
                     }
