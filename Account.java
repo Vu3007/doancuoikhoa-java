@@ -125,14 +125,16 @@ public class Account  {
     public void TicketTrainList(){
         ticketTrain TicketTrain=new ticketTrain();
         TicketTrain.input(money);
-     ticketTrainList.add(TicketTrain);
-     money-=30000;
-
-
+        ticketTrainList.add(TicketTrain);
+            money-=30000;
     }
     public void displayHistoryTicketTrain(){
+    if (money>=30000){
         System.out.println("Lịch sử đặt vé : ");
         ticketTrainList.forEach((ticketTrain) ->ticketTrain.display() );
+    }else {
+        System.out.println("Không tồn tại!!");
+    }
 
     }
 
