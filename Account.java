@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Account  {
     String fullname, stk, phoneNumber, address;
     int money;
-    List<input> InputList=new ArrayList<>();
+
 
     List<Receiver> receiverList = new ArrayList<>();
     List<Transfer> transferList = new ArrayList<>();
@@ -95,8 +95,6 @@ public class Account  {
 
         money = 0;
 
-
-        convertObjectToJsonFile("account.json",InputList);
 
 
     }
