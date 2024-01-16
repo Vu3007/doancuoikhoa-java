@@ -67,14 +67,13 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                     userChangePassword(scanner, user, fileName);
                     break;
                 case 4:
-                    khoitaoTK();
+                    menu();
                     break;
                 case 5:
                     userLogout(scanner, fileName);
                     return;
                 default:
-                    System.out.println("Khong co chuc nang nay!");
-                    break;
+                    throw new Exception("Không hợp lệ") ;
             }
         }
     }
@@ -243,7 +242,7 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
         }
     }
         static Account account=null;
-    void khoitaoTK(){
+    void menu(){
         Scanner sc=new Scanner(System.in);
         int choose;
         do {
@@ -253,13 +252,14 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
             switch(choose) {
                 case 1:
                     account = new Account();
+                    Scanner Scanner =new Scanner(System.in);
                     account.input();
+
+
                     break;
                 case 2:
                     if(account != null) {
                         account.addReceiver();
-
-                        account.display();
                     } else {
                         System.err.println("TK khong ton tai");
                     }
@@ -300,16 +300,26 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                         System.err.println("TK khong ton tai");
                     }
                     break;
-
                 case 8:
+                    if(account != null) {
+                       account.balance();
+                    } else {
+                        System.err.println("TK khong ton tai");
+                    }
+                    break;
+                case 9:
                     System.out.println("Thoat!!!");
                     break;
                 default:
                     System.out.println("Nhap sai!!!");
                     break;
             }
-        } while(choose != 7);
+        } while(choose != 9);
     }
+    public void save() {
+
+    }
+
 
     private void showMenu() {
         System.out.println("1. Khoi tao TK");
@@ -319,7 +329,8 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
         System.out.println("5. Xem lich su chuyen tien");
         System.out.println("6.Đặt vé tàu hỏa");
         System.out.println("7.Lịch sử  đặt vé tàu hỏa");
-        System.out.println("8.Thoat");
+        System.out.println("8.Truy van so du ");
+        System.out.println("9.Thoat");
         System.out.println("Chon: ");
     }
     }

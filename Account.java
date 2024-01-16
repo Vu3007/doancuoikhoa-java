@@ -1,9 +1,16 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class Account  {
     String fullname, stk, phoneNumber, address;
     int money;
+    List<input> InputList=new ArrayList<>();
 
     List<Receiver> receiverList = new ArrayList<>();
     List<Transfer> transferList = new ArrayList<>();
@@ -72,6 +79,7 @@ public class Account  {
     }
 
     public void input() {
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Nhap Ho & Ten: ");
         fullname = scan.nextLine();
@@ -86,7 +94,14 @@ public class Account  {
         address = scan.nextLine();
 
         money = 0;
+
+
+        convertObjectToJsonFile("account.json",InputList);
+
+
     }
+
+
 
     public void addReceiver() {
         Receiver receiver = new Receiver();
@@ -119,6 +134,7 @@ public class Account  {
         System.out.println("Lich su chuyen tien: ");
         transferList.forEach((transfer) -> {
             transfer.display();
+
         });
     }
     public void TicketTrainList(){
@@ -132,6 +148,9 @@ public class Account  {
         ticketTrainList.forEach((ticketTrain) ->ticketTrain.display() );
 
     }
+    public void balance(){
+        System.out.println("So du la: "+ money);
+    }
 
     @Override
     public String toString() {
@@ -144,5 +163,26 @@ public class Account  {
         displayReceiverHistory();
         displayTransferHistory();
     }
+    // Ghi Object JSON file (Object là 1 đối tượng bất kỳ : Có thể là Single Object hoặc List Object)
+    public void convertObjectToJsonFile(String fileName, Object obj) {
+        try {
+            // Tạo đối tượng gson
+            // Gson gson = new Gson();
+
+            // Nếu muốn format JSON cho đẹp
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            // Tạo đối tượng Writer để ghi nội dung vào file
+            Writer writer = Files.newBufferedWriter(Paths.get(fileName));
+
+            // Ghi object vào file
+            gson.toJson(obj, writer);
+
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
