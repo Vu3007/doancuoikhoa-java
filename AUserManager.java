@@ -96,6 +96,7 @@ public abstract class AUserManager {
         }
     }
 
+
     int checkIntNumber(Scanner scn) {
         while (!scn.hasNextInt()) {
             System.out.println("Ban can nhap vao 1 so nguyen!");

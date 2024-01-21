@@ -46,6 +46,7 @@ import java.util.Scanner;
             note = scan.nextLine();
 
             createdAt = new Date();
+
         }
 
         @Override

@@ -1,0 +1,30 @@
+{
+  "fullname": "dfgsd",
+  "stk": "353",
+  "phoneNumber": "5643",
+  "address": "fdgd",
+  "money": 316987,
+  "receiverList": [
+    {
+      "money": 353533,
+      "note": "gfd",
+      "createdAt": "Jan 21, 2024, 4:58:54 PM"
+    }
+  ],
+  "transferList": [
+    {
+      "transferStk": "dgdfd",
+      "note": "dfs",
+      "money": 6546,
+      "createdAt": "Jan 21, 2024, 4:59:04 PM"
+    }
+  ],
+  "ticketTrainList": [
+    {
+      "name": "vu",
+      "cccd": 234,
+      "soGhe": 23,
+      "money": 0
+    }
+  ]
+}

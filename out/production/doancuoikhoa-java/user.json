@@ -1,45 +1,12 @@
 [
   {
-    "username": "vu123",
+    "username": "vu",
     "email": "vu@gmail.com",
     "password": "123"
   },
   {
-    "username": "vu@gmail.com",
-    "email": "vu123@gmail.com",
-    "password": "abc",
-    "stk": "234234"
-  },
-  {
-    "username": "vu345@gmail.com",
-    "email": "vu456@gmail.com",
-    "password": "abc"
-  },
-  {
-    "username": "vu",
-    "email": "vu1111@gmail.com",
-    "password": "v1213123"
-  },
-  {
-    "username": "vu123346",
-    "email": "vu4823473@gmail.com",
-    "password": "3245127645dhs"
-  },
-  {
-    "username": "vu123442",
-    "email": "vu1631r2@gmail.com",
-    "password": "1234567ss"
-  },
-  {
-    "username": "vùeE",
-    "email": "VU28713@gmail.com",
-    "password": "123456788"
-  },
-  {
-    "username": "vu712617",
-    "email": "vu22312@gmail.com",
-    "password": "123447212"
+    "username": "vu123",
+    "email": "vu3007@gmail.com",
+    "password": "1111111"
   }
-
-
 ]

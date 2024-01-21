@@ -1,12 +1,12 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 public class Account  {
     String fullname, stk, phoneNumber, address;
     int money;
@@ -82,7 +82,8 @@ public class Account  {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Nhap Ho & Ten: ");
-        fullname = scan.nextLine();
+         fullname = scan.nextLine();
+
 
         System.out.println("Nhap STK: ");
         stk = scan.nextLine();
@@ -94,10 +95,14 @@ public class Account  {
         address = scan.nextLine();
 
         money = 0;
+        Account account=new Account();
+        account.setFullname(fullname);
+
 
 
 
     }
+
 
 
 
@@ -157,30 +162,12 @@ public class Account  {
 
     public void display() {
         System.out.println(toString());
-
         displayReceiverHistory();
         displayTransferHistory();
     }
-    // Ghi Object JSON file (Object là 1 đối tượng bất kỳ : Có thể là Single Object hoặc List Object)
-    public void convertObjectToJsonFile(String fileName, Object obj) {
-        try {
-            // Tạo đối tượng gson
-            // Gson gson = new Gson();
 
-            // Nếu muốn format JSON cho đẹp
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            // Tạo đối tượng Writer để ghi nội dung vào file
-            Writer writer = Files.newBufferedWriter(Paths.get(fileName));
 
-            // Ghi object vào file
-            gson.toJson(obj, writer);
-
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
 }
 

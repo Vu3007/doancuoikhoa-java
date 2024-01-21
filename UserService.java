@@ -67,7 +67,7 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                     userChangePassword(scanner, user, fileName);
                     break;
                 case 4:
-                    menu();
+                    menu(fileName);
                     break;
                 case 5:
                     userLogout(scanner, fileName);
@@ -242,7 +242,7 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
         }
     }
         static Account account=null;
-    void menu(){
+    void menu(String file1){
         Scanner sc=new Scanner(System.in);
         int choose;
         do {
@@ -254,8 +254,6 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                     account = new Account();
                     Scanner Scanner =new Scanner(System.in);
                     account.input();
-
-
                     break;
                 case 2:
                     if(account != null) {
@@ -308,17 +306,36 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
                     }
                     break;
                 case 9:
+                    if(account != null) {
+                        save();
+                        System.out.println("Đã lưu vào json!!");
+                    } else {
+                        System.err.println("TK khong ton tai");
+                    }
+                case 10:
                     System.out.println("Thoat!!!");
                     break;
+
                 default:
                     System.out.println("Nhap sai!!!");
                     break;
             }
-        } while(choose != 9);
+        } while(choose != 10);
     }
-    public void save() {
+    public void save(){
+        account.stk.toString();
+        account.transferList.toString();
+        account.receiverList.toString();
+        account.ticketTrainList.toString();
 
+
+        convertObjectToJsonFile("account.json", account);
     }
+
+
+
+
+
 
 
     private void showMenu() {
@@ -330,7 +347,9 @@ public class UserService extends AUserManager implements IUserLogin, IUserRegist
         System.out.println("6.Đặt vé tàu hỏa");
         System.out.println("7.Lịch sử  đặt vé tàu hỏa");
         System.out.println("8.Truy van so du ");
-        System.out.println("9.Thoat");
+        System.out.println("9.Lưu thông tin");
+        System.out.println("10.Thoát");
         System.out.println("Chon: ");
     }
+
     }
